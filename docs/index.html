@@ -1,193 +1,32 @@
-<html dir="ltr" lang="en">
-
-    <head>
-
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, intial-scale=1"/>
-
-        <title>~</title>
-
-    </head>
-
-    <style>
-
-        /* Change your colors and cursor speed here */
-        
-        /* "--user-color" changes color of "[User@Firefox ~]$" */
-        /* "--command-color" changes color of the commands and "./status.sh" */
-        /* "--file-color" changes the color of the cated out file */
-        /* "--link-color" changes the color of links */
-        /* "--cursor-speed", "--background-color" and "--foreground-color" should be obvious */
-        
-        :root {
-            --background-color: #282A36;
-            --foreground-color: #F8F8F2;
-            --user-color: #F8F8F2;
-            --command-color: #F8F8F2;
-            --file-color: #F8F8F2;
-            --link-color: #F1FA8C;
-            --cursor-speed: .90s;
-        }
-        
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            background-color: var(--background-color);
-        }
-        
-        #wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        p,
-        a,
-        label {
-            font-family: monospace, monospace;
-            font-size: 1.1em;
-            margin: 0px;
-        }
-        
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        
-        .user {
-            color: var(--user-color);
-        }
-        
-        .command {
-            color: var(--command-color);
-        }
-        
-        .file {
-            color: var(--file-color);
-        }
-        
-        .clock {
-            color: var(--foreground-color);
-        }
-        
-        .date {
-            color: var(--foreground-color);
-        }
-        
-        .links {
-            color: var(--foreground-color);
-        }
-        
-        .cursor {
-            color: var(--foreground-color);
-            -moz-animation: blink var(--cursor-speed) linear infinite;
-            animation: blink var(--cursor-speed) linear infinite;
-        }
-        
-        @-moz-keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 1; }
-            50.01% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 1; }
-            50.01% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-    </style>
-
-    <script>
-    	
-        // Get current time and format
-        function getTime() {
-            let date = new Date(),
-                min = date.getMinutes(),
-                hour = date.getHours();
-    
-                return '' + 
-                    (hour < 10 ? ('0' + hour) : hour) + ':' + 
-                    (min < 10 ? ('0' + min) : min);
-        }
-
-        //Get current date
-        function getDate() {
-            var dt = new Date();
-
-            //Ensure date comes as 01, 02, etc
-            var DD = ('0' + dt.getDate()).slice(-2);
-            //getMonth returns month from 0
-            var MM = ('0' + (dt.getMonth() + 1)).slice(-2);
-
-            //Final output
-            return '' +
-                (DD + '/' + MM);
-        }
-
-        window.onload = () => {
-            // Set up the clock and date
-            document.getElementById('clock').innerHTML = getTime();
-            document.getElementById('date').innerHTML = getDate();
-        		
-            // Set clock interval to tick clock
-            setInterval( () => {
-                document.getElementById('clock').innerHTML = getTime();
-            },100);
-        }
-    		
-    </script>
-
-    <body>
-
-        <div id="wrapper">
-
-            <div>
-
-                <div class="cli">
-                    <p><span class="user">[User@Firefox ~]$</span> <span class="command">./status.sh</span></p>
-                </div>
-
-                    <div id="status.sh">
-                        <p class="clock">'Time: <span id=clock></span>'</p>
-                        <p class="date">'Date: <span id=date></span>'</p>
-                    </div>
-
-                <div class="cli">
-                    <p><span class="user">[User@Firefox ~]$</span> <span class="command">cat</span> <span class="file">links.txt</span></p>
-                </div>
-
-                <div>
-                    <p class="links">
-                    <a href="https://facebook.com">'Facebook'</a>,<br>
-                    <a href="http://tumblr.com">'Tumblr'</a>,<br>
-                    <a href="https://www.youtube.com">'YouTube'</a>,<br>
-                    <a href="https://www.reddit.com">'Reddit'</a>,<br>
-                    <a href="https://drive.google.com">'Drive'</a>,<br>
-                    <a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Harry%20Potter/works?page=1">'Harmony Ao3'</a>,<br>
-                    <a href="https://anchor.fm">'Anchor'</a>,
-                    </p>
-                </div>
-
-                <div class="cli">
-                    <p><span class="user">[User@Firefox ~]$ </span><span class="cursor">█</span></p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </body>
-
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body onload="startTime()">
+<div id="container">
+	<div id="header"></div>
+	<div id="time"></div>
+	<input id="search-field" type="text" placeholder="search with google..." autofocus></input>
+	<input id="search-submit" type="button" value="search"></input>
+	<script src="assets/js/app.js"></script>
+	<table>
+	  <tr>
+		<th>general</th>
+		<th>media</th>
+		<th>social</th>
+	  </tr>
+	  <tr>
+		<td><a href="https://gmail.com">gmail</a></td>
+		<td><a href="https://youtube.com">youtube</td>
+		<td><a href="https://discord.com/app">discord</td>
+	  </tr>
+	  <tr>
+		<td><a href="https://soundcloud.com">soundcloud</td>
+		<td><a href="https://twitch.tv">twitch</td>
+		<td><a href="https://reddit.com">reddit</td>
+	  </tr>
+	</table>
+</div>
+</body>
 </html>
