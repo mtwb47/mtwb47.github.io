@@ -11,13 +11,13 @@
 
     <style>
 
-        /* Change your colors and cursor speed here */
+        /* Change your colors here */
         
         /* "--user-color" changes color of "[User@Firefox ~]$" */
         /* "--command-color" changes color of the commands and "./status.sh" */
         /* "--file-color" changes the color of the cated out file */
         /* "--link-color" changes the color of links */
-        /* "--cursor-speed", "--background-color" and "--foreground-color" should be obvious */
+        /* "--background-color" and "--foreground-color" should be obvious */
         
         :root {
             --background-color: #282A36;
@@ -26,7 +26,6 @@
             --command-color: #F8F8F2;
             --file-color: #F8F8F2;
             --link-color: #F1FA8C;
-            --cursor-speed: .90s;
         }
         
         html,
@@ -50,9 +49,27 @@
             align-items: center;
         }
         
+        #search-form {
+            margin: 0px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis clip;
+        }
+        
+        #search-input {
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            padding: 0px;
+            max-width: 8vw;
+            background-color: var(--background-color);
+            color: var(--foreground-color);
+        }
+        
         p,
         a,
-        label {
+        label,
+        #search-input {
             font-family: monospace, monospace;
             font-size: 1.1em;
             margin: 0px;
@@ -85,26 +102,6 @@
         
         .links {
             color: var(--foreground-color);
-        }
-        
-        .cursor {
-            color: var(--foreground-color);
-            -moz-animation: blink var(--cursor-speed) linear infinite;
-            animation: blink var(--cursor-speed) linear infinite;
-        }
-        
-        @-moz-keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 1; }
-            50.01% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 1; }
-            50.01% { opacity: 0; }
-            100% { opacity: 0; }
         }
 
     </style>
@@ -180,7 +177,9 @@
                 </div>
 
                 <div class="cli">
-                    <p><span class="user">[User@Firefox ~]$ </span><span class="cursor">█</span></p>
+                    <form id="search-form" action="https://duckduckgo.com/" method="get" autocomplete="off" spellcheck="false">
+                        <label for="search"><span class="user">[User@Firefox ~]$ </span><span class="command">ddg </span></label><input id="search-input" autofocus="true" type="text" name="q">
+                    </form>
                 </div>
 
             </div>
