@@ -28,7 +28,7 @@ function startTime() {
 	
 	document.getElementById("time").innerHTML = day+" "+date+" "+time;
 	document.getElementById("header").innerHTML = "good "+partOfDay+", astraxy!";
-	document.title = "good "+partOfDay+", astraxy!";
+	document.title = "good "+partOfDay+", drmdub!";
 	setTimeout(startTime, 500);
 }
 
