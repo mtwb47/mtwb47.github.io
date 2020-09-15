@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startpage</title>
+    <!--Json Editor-->
+    <link rel="stylesheet" href="css/jsoneditor.min.css" type="text/css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="startTime()">
-<div id="container">
-	<div id="header"></div>
-	<div id="time"></div>
-	<input id="search-field" type="text" placeholder="search with google..." autofocus></input>
-	<input id="search-submit" type="button" value="search"></input>
-	<script src="assets/js/app.js"></script>
-	<table>
-	  <tr>
-		<th>general</th>
-		<th>media</th>
-		<th>social</th>
-	  </tr>
-	  <tr>
-		<td><a href="https://gmail.com">gmail</a></td>
-		<td><a href="https://youtube.com">youtube</td>
-		<td><a href="https://facebook.com">facebook</td>
-	  </tr>
-	  	<tr>
-		<td><a href="https://www.bleedinggreennation.com/">BGN</td>
-		<td><a href="https://anchor.fm">anchor</td>
-		<td><a href="https://reddit.com">reddit</td>
-	  </tr>
-      <tr>
-		<td><a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Harry%20Potter/works?page=1">harmony ao3</td>
-		<td><a href="https://theverge.com">theverge</td>
-		<td><a href="https://tumblr.com">tumblr</td>
-	  </tr>
-
-</table>
-</div>
+<body>
+    <div id="settings" class="settings-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>
+                Edit the config.json below. Check <a href="https://github.com/deepjyoti30/startpage#settings">this</a> for details
+            </h2>
+            <div id="jsoneditor" style="width: 100%;height: 80%;"></div>
+        </div>
+    </div>
+    <div id="main" class="main">
+        <div id="message">
+            <h1 id="message-text">Good Morning!</h1>
+        </div>
+        <div id="date">
+            <h2 id="date-text"></h2>
+            <h2 id="line">|</h2>
+            <h2 id="weather-text">Fetching Weather...</h2>
+        </div>
+        <div id="search-bar">
+            <input id="search-bar-input"></input>
+            <div class="autocomplete-items-container">
+            </div>
+        </div>
+        <div id="other-content">
+        </div>
+    </div>
+    <!--JSON Editor-->
+    <script src="js/jsoneditor.min.js"></script>
+    <!--Custom JS-->
+    <script src="js/settings.js"></script>
+    <script src="js/autocomplete.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
