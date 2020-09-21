@@ -158,12 +158,13 @@ button {
     background-repeat: no-repeat;
     background-position: center;
 }
-
-.optima {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-kerning: auto;  
+.facebook {
+    background-image: url("facebook.PNG");
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 
  
