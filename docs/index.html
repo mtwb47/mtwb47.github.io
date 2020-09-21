@@ -1,22 +1,84 @@
-<html>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
     
-        <div class="social">
-            <ul><a href="https://facebook.com">Facebook</a></ul>
-            <ul><a href="https://tumblr.com">Tumblr</a></ul>
-            <ul><a href="https://reddit.com">Reddit</a></ul>
-        <div>
-        <div class="fanficion">
-            <ul><a href="http://archiveofourown.org">Ao3</a></ul>
-            <ul><a href="http://fanfiction.net">Fanfiction.net</a></ul>
-            <ul><a href="http://portkey-archive.org">Portkey</a></ul>
-        </div>
-        <div class="other">
-            <ul><a href="http://youtube.com">Youtube</a></ul>
-            <ul><a href="http://theverge.com">The Verge</a></ul>
-            <ul><a href="http://drive.google.com">Google Drive</a></ul>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Startpage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
+</head>
 
-    </body>
+<!--Loads the first dog picture on page load-->
+<body onload="watchForm()">
+
+  <!--Magic doggo button-->
+  <button> 
+  </button>
+<!--The Dog picture itself-->
+  <div class="imagecontainer">
+    <div id="dogcontainer" style="display: none">     
+      <section class="results">      
+        <div id="doggo" class="results-img">
+        </div>
+      </section>
+  </div>
+    <div id="imagediv">  
+    </div>      
+  </div>
+
+
+  <!--search bar-->
+    <div class="searchcontainer">
+        <form action="https://google.com/search" method="get">
+        <input class="input_box" type="text" name="q" placeholder="Search with Google!"/>
+      </form>     
+</div>
+
+<!--Links start here-->
+
+    <div class="container">
+        
+      <a href="https://www.youtube.com/">
+        <div id="center" class="youtube"  >
+        </div>
+      </a>
+
+      
+      <a href="https://optima.turkuamk.fi/">  
+        <div id="center" class="optima">
+          <p>Optima</p>
+        </div>
+      </a>
+    
+      <a href="https://www.github.com/">
+        <div id="center" class="github">          
+        </div>
+      </a>
+
+      <a href="https://lukkari.turkuamk.fi">
+        <div id="center" class="calendar">
+        </div>
+      </a>
+
+<!--This one is work stuff. Change if necessary-->
+
+      <a href="https://monitor.springboardvr.com/30b3ce00-e748-11e7-90ec-21b3bb87d54f/overview">
+        <div id="center" class="springboard">
+        </div>
+      </a>
+
+      <a href="https://messi.turkuamk.fi/Sivut/messi_etusivu.aspx">
+        <div id="center" class="amk">
+        </div>
+      </a>
+    </div>
+
+<!--do not move or the doggos disappear-->
+
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</body>
+
 </html>
 
