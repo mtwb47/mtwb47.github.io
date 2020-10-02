@@ -1,0 +1,104 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(bg.png);
+    background-size: cover;
+    background-position-x: center;
+    font-family: Source Code Pro Medium, monospace;
+    text-align: center;
+}
+
+#clock, #date {
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.clockdate {
+    margin-top: 50px;
+}
+
+.input_box {
+    margin: 5px auto;
+    width: 530px;
+    height: 45px;
+    white-space: nowrap;
+    position: relative;
+    background-color: rgba(4, 21, 62, 0.7);
+    backdrop-filter: url(filters.svg#filter) blur(3px) grayscale(40%);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 30px;
+    border-radius: 5px;
+    font-family: Calibri, sans-serif;
+    font-size: 16pt;
+    transition: background .55s ease;
+}
+
+.input_box:hover, .input_box:focus, .input_box:active{
+    outline:none;
+    background-color: rgba(4, 21, 62, 0.5);
+    backdrop-filter: url(filters.svg#filter) blur(1px) grayscale(20%);
+}
+
+.input_box::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding-top: 1px;
+    color: rgba(137, 188, 255, 0.8);
+    font-weight: bold;
+    font-size: 12pt;
+    text-align: left;
+}
+
+.productivity, .recreation {
+    height: 363px;
+    width: 260px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    margin-top: 1.5%;
+    resize: horizontal;
+    background-color: rgba(4, 21, 62, 0.5);
+    backdrop-filter: url(filters.svg#filter) blur(3px) grayscale(40%);
+}
+
+.button {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12pt;
+    text-decoration: none;
+    text-align: right;
+    font-weight: 500;
+}
+
+a:hover {
+    color: rgb(2, 1, 45);
+    padding: 10px, 10px, 10px, 10px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 13pt;
+    background-color: rgb(247, 99, 84);
+    transition: background .3s ease;
+}
+
+h1 {
+    font-size: 15pt;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 3px;
+    color: rgba(137, 188, 255, 0.8)
+}
+
+.kur {
+    color: rgba(247, 99, 84, 0.8);
+}

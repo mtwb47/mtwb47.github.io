@@ -1,83 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    <meta charset="UTF-8">
-    <title>Startpage</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
+    <meta charset="unicode">
+    <meta name='description' content='A simple startpage, suited to my needs.' />
+    <meta name='author' content='Milen Hristov' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milen@vivaldi ~</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<!--Loads the first dog picture on page load-->
-<body onload="watchForm()">
+<body onload="startTime()">
 
-  <!--Magic doggo button-->
-  <button> 
-  </button>
-<!--The Dog picture itself-->
-  <div class="imagecontainer">
-    <div id="dogcontainer" style="display: none">     
-      <section class="results">      
-        <div id="doggo" class="results-img">
-        </div>
-      </section>
-  </div>
-    <div id="imagediv">  
-    </div>      
-  </div>
-
-
-  <!--search bar-->
-    <div class="searchcontainer">
-        <form action="http://duckduckgo.com/" method="get">
-        <input class="input_box" type="text" name="q" placeholder="Search with Duck Duck Go!"/>
-      </form>     
-</div>
-
-<!--Links start here-->
-
-    <div class="container">
+    <script type='text/javascript'>
+    function startTime() {
+        var today = new Date();
+        var hr = today.getHours();
+        var min = today.getMinutes();
+        var sec = today.getSeconds();
+        ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+        hr = (hr == 0) ? 12 : hr;
+        hr = (hr > 12) ? hr - 12 : hr;
+        //Add a zero in front of numbers<10
+        hr = checkTime(hr);
+        min = checkTime(min);
+        sec = checkTime(sec);
+        document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
         
-      <a href="https://www.youtube.com/">
-        <div id="center" class="youtube"  >
-        </div>
-      </a>
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var curWeekDay = days[today.getDay()];
+        var curDay = today.getDate();
+        var curMonth = months[today.getMonth()];
+        var curYear = today.getFullYear();
+        var date = curWeekDay+", "+curDay+" "+curMonth;
+        document.getElementById("date").innerHTML = date;
+        
+        var time = setTimeout(function(){ startTime() }, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    </script>
 
-      
-      <a href="https://facebook.com/">
-          <div id="center" class="facebook">
+    <div class="clockdate">
+        <div class="clockdate-wrapper">
+          <div id="date"></div>
+          <div id="clock"></div>
         </div>
-      </a>
-    
-      <a href="https://tumblr.com">
-        <div id="center" class="github">          
-        </div>
-      </a>
-
-      <a href="https://calendar.google.com">
-        <div id="center" class="calendar">
-        </div>
-      </a>
-
-<!--This one is work stuff. Change if necessary-->
-
-      <a href="https://reddit.com">
-        <div id="center" class="springboard">
-        </div>
-      </a>
-
-      <a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Harry%20Potter/works?page=1">
-        <div id="center" class="amk">
-        </div>
-      </a>
     </div>
 
-<!--do not move or the doggos disappear-->
+    <div class="search" style="display: block;">
+        <form class="ddg textField" action="https://duckduckgo.com/" method="get">
+            <input class="input_box" type="text" name="q" placeholder="ツ     Search with DuckDuckGo" />
+        </form>
+    </div>
 
-  <script src="index.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div class="bookmarks">
+        <div class="productivity">
+            <h1><span class="kur">productivity</span> {</h1>
+            <ul>
+                <li>lang: <a href='http://yesjapan.com' class='button'>YesJapan</a>;</li>
+                <li>forum: <a href='https://stackexchange.com/' class='button'>StackExchange</a>;</li>
+                <li>prog: <a href='http://stackoverflow.com/' class='button'>StackOverflow</a>;</li>
+                <li>prog: <a href='https://softuni.bg/' class='button'>SoftUni</a>;</li>
+                <li>prog: <a href='https://judge.softuni.bg/' class='button'>Judge</a>;</li>
+                <li>q&a: <a href='http://sli.do' class='button'>Slido</a>;</li>
+                <li>note: <a href='http://ssavr.com/' class='button'>ssavr</a>;</li>
+                <li>e-mail: <a href='https://gmail.com' class='button'>gmail</a>;</li>
+                <li>time-mng: <a href='https://calendar.google.com/' class='button'>calendar</a>;</li>
+                <li>office: <a href='http://docs.google.com/' class='button'>gDocs</a>;</li>
+                <li>office: <a href='https://docs.google.com/spreadsheets/u/0/' class='button'>gSheets</a>;</li>
+                <li>pix: <a href='https://photos.google.com/' class='button'>gPhotos</a>;</li>
+                <li>cosm: <a href='https://bg.oriflame.com/' class='button'>Oriflame</a>;</li>
+            </ul>
+            <h1>}</h1>
+        </div>
 
+        <div class="recreation">
+            <h1><span class="kur">recreation</span> {</h1>
+            <ul>
+                <li>vid: <a href='https://www.youtube.com/feed/subscriptions/' class='button'>YouTube</a>;</li>
+                <li>vid: <a href='https://www.bitchute.com/' class='button'>BitChute</a>;</li>
+                <li>sleep: <a href='https://mynoise.net/' class='button'>myNoise</a>;</li>
+                <li>radio: <a href='http://cmd.to/' class='button'>cmd.to</a>;</li>
+                <li>sns: <a href='http://minds.com' class='button'>Minds</a>;</li>
+                <li>sns: <a href='http://reddit.com' class='button'>reddit</a>;</li>
+                <li>tech/sns: <a href='https://kaldata.com/' class='button'>kaldata</a>;</li>
+                <li>art: <a href='http://deviantart.com' class='button'>DeviantArt</a>;</li>
+                <li>art: <a href='https://www.artstation.com/' class='button'>ArtStation</a>;</li>
+                <li>fun: <a href='https://xkcd.com' class='button'>xkcd</a>;</li>
+                <li>gms: <a href='https://www.chrono.gg/' class='button'>chrono.gg</a>;</li>
+                <li>gms: <a href='https://www.wow-freakz.com/' class='button'>Freakz</a>;</li>
+                <li>gms: <a href='https://www.dalaran-wow.com/' class='button'>Dalaran</a>;</li>
+            </ul>
+            <h1>}</h1>
+        </div>
+    </div>
+    
 </body>
-
 </html>
-
