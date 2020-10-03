@@ -1,40 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>~</title>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<script src="scripts/transitions.js"></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <title>New Tab</title>
-</head>
+	<body>
+		<svg id="fader"></svg>
+        <script>fadeInPage();</script>
 
-<body>
-    <div class="search_block">
-        <h1 id="greeting"></h1>
-            <form id="search_eng_form" method="get" action="https://www.duckduckgo.com/">
-            <button type="button" class="se_btn" id="se_button"><img id="se_icon"src="icons/ddg.svg" class="filter-white"></button><input type="search" id="search" placeholder="Searching with DuckDuckGo" autocomplete="off" name="q" autofocus><button type="submit" class="go" id="go_btn">GO</button>
-            </form>
-    </div>
-    <div class="entertainment">
-        <p>watch</p>
-        <a href="https://www.youtube.com">youtube</a><br>
-        <a href="https://www.netflix.com/browse">netflix</a><br>
-        <a href="https://www.twitch.tv/">twitch</a>
-    </div>
-    <div class="social">
-        <p>social</p>
-        <a href="https://www.reddit.com/">reddit</a><br>
-        <a href="https://www.twitter.com/home">twitter</a><br>
-        <a href="https://www.facebook.com">facebook</a>
-    </div>
-    <div class="dev">
-        <p>dev</p>
-        <a href="https://github.com/">github</a><br>
-        <a href="https://wiki.archlinux.org/">archwiki</a><br>
-        <a href="https://dev.to/">dev.to</a>
-    </div>
-    <h2 id="time"></h2>
-    <script async type="text/javascript" src="script.js"></script>
-</body>
+		<!-- Welcome screen -->
+		<div id="main_window">
+			<img id=leftImg src="assets/img/image.png" class="image">
+			<div id="content">
+				<h1 class="title">Welcome</h1>
+				<div id="date">
+					<script type="text/javascript">
+						function doDate() {
+							var str = "";
+							var months = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+							var clock = new Date();
+							var now = new Date();
+
+							str += months[clock.getMonth()] + " " + now.getDate() + ", " + clock.getFullYear() + " | " + ("0" + now.getHours()).slice(-2) +":" + ("0" + now.getMinutes()).slice(-2) + ":" + ("0" + now.getSeconds()).slice(-2);
+							document.getElementById("date").innerHTML = str;
+						}
+						setInterval(doDate, 1000);
+						doDate();
+					</script>
+				</div>
+
+		<!-- Web search -->
+				<div id="web_search">
+					<form action="https://duckduckgo.com/" method="GET" autocomplete="off">
+						<label for="q">></label>
+						<input autofocus
+			        	 		id="q"
+			         			name="q"
+			         			type="search"
+			         			placeholder="search with duckduckgo...">
+					</form>
+				</div>
+
+		<!-- Links -->
+				<nav>
+					<div id=links_container>
+						<ul>
+							<a class="subtitle">Frequent</a>
+								<li><a href="https://genius.com/">Genius</a></li>
+								<li><a href="https://gitlab.com/">GitLab</a></li>
+								<li><a href="https://www.onedrive.live.com/">OneDrive</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Media</a>
+								<li><a href="https://www.netflix.com/browse">Netflix</a></li>
+								<li><a href="https://soundcloud.com/discover">Soundcloud</a></li>
+								<li><a href="https://www.youtube.com/">YouTube</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Social medias</a>
+								<li><a href="https://www.instagram.com/">Instagram</a></li>
+								<li><a href="https://www.reddit.com/">Reddit</a></li>
+								<li><a href="https://twitter.com/home">Twitter</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Studies</a>
+								<li><a href="https://www.epfl.ch/campus/security-safety/en/health/coronavirus-covid19/">COVID-19</a></li>
+								<li><a href="https://ewa.epfl.ch/">Mail</a></li>
+								<li><a href="https://moodle.epfl.ch/">Moodle</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Others</a>
+								<li><a href="https://www.digitec.ch/">Digitec</a></li>
+								<li><a href="http://192.168.1.130:8080">Komga</a></li>
+								<li><a href="https://rarbgenter.org/index80.php">RARBG</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="bottom">
+			<p class="credits">
+				<a href="https://www.deviantart.com/nuralifsidoel/art/Futaba-Rio-Seishun-Buta-Yarou-Vector-778405449">Art by NurAlifSidoel on DeviantArt</a>
+			</p>
+
+			<div class="contacts">
+				<p>
+					<a href="https://gitlab.com/wolfiy/wlfys-minimal-startpage">GitLab Repo</a> | 
+					<span id="light-mode-toggle" class="light-mode-toggle">Switch themes</span>
+				</p>
+			</div>
+		</div>
+
+		<script src="scripts/darkmode.js"></script>
+	</body>
 </html>
