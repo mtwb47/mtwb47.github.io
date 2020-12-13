@@ -1,7 +1,25 @@
+html,
 body {
   background-color: #282c34;
 }
 
 .header {
   display: inline;
+  color: #e06c75;
+  padding-right: 10px;
+}
+
+.link {
+  color: #e5c07b;
+}
+
+#social {
+  color: #e5c07b;
+}
+.social {
+  padding-right: 310px;
+}
+.main {
+  padding: 570px 0;
+  text-align: center;
 }
