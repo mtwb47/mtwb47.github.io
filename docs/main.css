@@ -1,0 +1,104 @@
+html  {
+    background: #222222;
+    color: #a3a5aa;
+}
+.showcontainer {
+    display: block !important;
+}
+img {
+    height: 354.25px !important;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.w3gridclass {
+    width: 100%;
+}
+.container-outer {
+    background: #262626;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    border-radius: 3px;
+    user-select: none;
+}
+.left-img{
+    float: left;
+    width: 30% 
+}
+.container {
+    float: right;
+    width: 70%;
+    padding-left: 30px;
+    padding-right: 15px;
+}
+h1 {
+    margin-left: 10%  !important;
+}
+ul {
+    list-style-type: none;
+    font-size: 20px;
+    user-select: none;
+}
+li{user-select: none;}
+a {
+    text-decoration: none ;
+}
+a:not(span):hover {
+    opacity: 0.8;
+}
+.accent {
+    color: #a57562 ;
+    padding-right: 10px;
+}
+span.accent {
+    min-width: 25px ;
+
+}
+.right {
+    margin-left: -25px;
+}
+.yahallo {display: none;}
+
+.toggle {
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #a3a5aa;
+    outline: 0px transparent;
+    transition: color 0.05s;
+    user-select: none;
+    cursor: pointer;
+}
+.toggle:active {
+    background: transparent;
+    border: none;
+    color: #4f4f50;
+}
+.leftimghidden {
+    display: none !important;
+}
+.resizecontainer {
+    width: 105% !important;
+    padding-left: 15px !important;
+}
+
+
+
+/*remove the anime girl*/
+/*
+
+.left-img{display: none;}
+.container{
+    width: 105%;
+    padding-left: 15px;
+}
+*/
