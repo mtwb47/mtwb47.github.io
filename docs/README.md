@@ -1,13 +1,15 @@
-# heya ~
-this is my minimal rosebox-themed startpage made with some html, css and a bit of W3.CSS  
-  
-![waifu](https://cdn.discordapp.com/attachments/704792091955429426/779068061037887529/unknown.png)
-are anime girls not your thing? or just want to get a more minimal look like this?
-![img](https://cdn.discordapp.com/attachments/635625925748457482/778911793014636564/unknown.png)  
-there is a small button to toggle between these two in bottom right.
-  
-## installation (chrome / chromium)  
-just clone this repo and load unpacked extension. (you have to enable developer mode)  
-![install](https://cdn.discordapp.com/attachments/704792091955429426/778917446550945822/Screenshot_2020_11.19_1039.png)
+Startpage
+========
 
-or just use this [link](https://kraxen72.github.io/rosebox/minimal-startpage) idc 
+### Live Demo: <a href="http://BeakBryno7.github.io/startpage/">Demo</a>
+
+### Default Home
+<img src="home.jpg" alt="Home" width="100%"/>
+
+### Preview
+<img src="home.gif" alt="Preview" width="100%"/>
+
+This is a fork of RamenMaestro's [startpage](https://github.com/RamenMaestro/startpage) with a image scroll option and larger option size.
+
+## Credits
+Images used in the sidebar are by background artist [Waneella](https://twitter.com/waneella_).
