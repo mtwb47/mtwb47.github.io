@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--Starpage by -->
-<html>
+<html id="html" data-theme="default">
 <head>
 	<meta charset="utf-8">
 	<title>~</title>
@@ -136,49 +136,50 @@
 
 		<header>
 			<br>
-			<h1>Hello, <span class="flair">M A T T</span></h1>
+			<h1>Hello, <span class="flair">Mhmd Ali</span></h1>
 		</header>
 
 		<nav>
 			<br>
-			<ul class="blue">
-				<a style="font-size:22px">Social</a>
-				<li><a href="https://www.fb.com/">Facebook</a></li>
-				<li><a href="https://www.youtube.com">Youtube</a></li>
-				<li><a href="https://reddit.com/">Reddit</a></li>
-				<li><a href="https://tumblr.com/">Tumblr</a></li>
-				<li><a href="https://reddit.com/r/unixporn">unixporn</a></li>
-				<li><a href="https://studio.youtube.com/">Studio</a></li>
-			</ul>
 
 			<ul class="green">
-				<a style="font-size:22px">Fanfiction</a>
-				<li><a href="https://archiveofourown.org/tags/Hermione%20Granger*s*Harry%20Potter/works?page=1">Harmony Ao3</a></li>
-				<li><a href="https://archiveofourown.org/works?utf8=%E2%9C%93&work_search%5Bsort_column%5D=revised_at&work_search%5Bother_tag_names%5D=&work_search%5Bexcluded_tag_names%5D=&work_search%5Bcrossover%5D=&work_search%5Bcomplete%5D=&work_search%5Bwords_from%5D=&work_search%5Bwords_to%5D=&work_search%5Bdate_from%5D=&work_search%5Bdate_to%5D=&work_search%5Bquery%5D=&work_search%5Blanguage_id%5D=en&commit=Sort+and+Filter&tag_id=Annabeth+Chase*s*Percy+Jackson">Percabeth Ao3</a></li>
-				<li><a href="https://www.fanfiction.net/book/Harry-Potter/?&srt=1&lan=1&r=10&c1=1&c2=3">Harmony FFN</a></li>
-				<li><a href="https://archiveofourown.org/tags/Josh%20Lyman*s*Donna%20Moss/works?page=1">Josh/Donna</a></li>
-				<li><a href="https://www.fanfiction.net/tv/Castle/?&srt=1&lan=1&r=10">Castle</a></li>
-				<li><a href="https://archiveofourown.org/tags/Fleur%20Delacour*s*Harry%20Potter/works">FlowerPot</a></li>
+				<a style="font-size:22px">Design</a>
+				<li><a href="https://behance.com/">Behance</a></li>
+				<li><a href="https://dribbble.com/">Dribbble</a></li>
+				<li><a href="https://www.awwwards.com/">Awwwards</a></li>
+				<li><a href="httpster.net/">Httpster</a></li>
+				<li><a href="https://land-book.com/">Land book</a></li>
+				<li><a href="https://www.admiretheweb.com/">AdmiretheWeb</a></li>
 			</ul>
 
 			<ul class="red">
 				<a style="font-size:22px">Tech</a>
-				<li><a href="https://www.omgubuntu.co.uk/">omg!ubuntu</a></li>
-				<li><a href="https://theverge.com">the verge</a></li>
-				<li><a href="https://9to5linux.com/">9to5Linux</a></li>
-				<li><a href="https://www.thurrott.com/">Thurott</a></li>
-				<li><a href="https://snapdrop.net">Snap Drop</a></li>
-				<li><a href="https://odysee.com/">odysee</a></li>
+				<li><a href="https://dev.to/">dev.to</a></li>
+				<li><a href="https://app.daily.dev/">daily.dev</a></li>
+				<li><a href="https://www.producthunt.com">producthunt</a></li>
+				<li><a href="https://free-for.dev/">free-for.dev</a></li>
+				<li><a href="https://tiny-helpers.dev/">tiny-helpers</a></li>
+				<li><a href="https://devresourc.es/">devresourc.es</a></li>
+			</ul>
+
+			<ul class="blue">
+				<a style="font-size:22px">Social</a>
+				<li><a href="https://www.youtube.com">Youtube</a></li>
+				<li><a href="https://github.com/">Github</a></li>
+				<li><a href="https://linkedin.com/">LinkedIn</a></li>
+				<li><a href="https://twitter.com/">Twitter</a></li>
+				<li><a href="https://reddit.com/">Reddit</a></li>
+				<li><a href="https://discord.com/">Discord</a></li>
 			</ul>
 
 			<ul class="yellow">
 				<a style="font-size:22px">Else</a>
-				<li><a href="https://bleedinggreennation.com/">BGN</a></li>
-				<li><a href="https://gmail.com/">Gmail</a></li>
-				<li><a href="https://patreon.com">patreon</a></li>
-				<li><a href="https://anchor.fm/">anchor</a></li>
-				<li><a href="https://gitlab.com/thelinuxcast">gitlab</a></li>
+				<li><a href="https://mail.google.com">gmail</a></li>
+				<li><a href="https://figma.com">figma</a></li>
+				<li><a href="https://temp-mail.com/">temp mail</a></li>
 				<li><a href="https://monkeytype.com/">monkeytype</a></li>
+				<li><a href="https://keep.google.com">google keep</a></li>
+				<li><a href="https://soundcloud.com/">soundcloud</a></li>
 			</ul>
 		</nav>
 
@@ -245,6 +246,40 @@
 				slides[slideIndex-1].style.display = "block";
 				reqdVars[slideIndex-1].className += " active";
 			}
+
+			const html = document.getElementById("html");
+			const colorchemes = ["default", "gruvbox", "nord"];
+			let changeTheme = (e) => {
+				if (e.key == "c") {
+					let currentThemeIndex = colorchemes.findIndex(color => color === html.dataset.theme );
+					currentThemeIndex = (currentThemeIndex >= colorchemes.length - 1) ? 0 : currentThemeIndex + 1 ;
+					html.dataset.theme = colorchemes[currentThemeIndex];
+					localStorage.setItem("themeIndex", currentThemeIndex);
+
+					let havematched = true;
+
+					switch (currentThemeIndex) {
+						case 0:
+						slideIndex= 1;
+						break;
+						case 1:
+						slideIndex=11;
+						break;
+						case 2:
+						slideIndex=10;
+						break;
+						default:
+							havematched = false;
+							}
+							if (havematched){
+							localStorage.setItem("slideIndex", slideIndex);
+							showSlides(slideIndex);
+					}
+				}
+			}
+			const currentTheme = localStorage.getItem("themeIndex");
+			html.dataset.theme = colorchemes[currentTheme || 0];
+			document.addEventListener("keyup", e => changeTheme(e))
 			</script>
 		</div>
 	</body>
