@@ -141,7 +141,12 @@
 				var i;
 				var slide = document.querySelector(".mySlides");
 				var reqdVars = document.getElementsByClassName("reqdVar");
-				for (i = 0; i < reqdVars.length; i++) {
+				if (n > 23) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = 23;
+				}				for (i = 0; i < reqdVars.length; i++) {
 					reqdVars[i].className = reqdVars[i].className.replace(" active", "");
 				}
 				slide.querySelector("img").src = `img/side${slideIndex}.gif`
