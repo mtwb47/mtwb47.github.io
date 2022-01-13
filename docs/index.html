@@ -14,96 +14,6 @@
 				<img src="img/side1.gif">
 			</div>
 
-			<div class="mySlides fade">
-				<img src="img/side2.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side3.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side4.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side5.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side6.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side7.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side8.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side9.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side10.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side11.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side12.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side13.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side14.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side15.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side16.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side17.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side18.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side19.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side20.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side21.gif">
-			</div>
-
-			<div class="mySlides fade">
-				<img src="img/side22.gif">
-			</div>
-
-
-			<div class="mySlides fade">
-				<img src="img/side23.gif">
-			</div>
-
-
 			<a class="next" onclick="plusSlides(1)">&#8734;</a>
 		</div>
 		<br>
@@ -229,22 +139,14 @@
 			// Show slides
 			function showSlides(n) {
 				var i;
-				var slides = document.getElementsByClassName("mySlides");
+				var slide = document.querySelector(".mySlides");
 				var reqdVars = document.getElementsByClassName("reqdVar");
-				if (n > slides.length) {
-					slideIndex = 1;
-				}
-				if (n < 1) {
-					slideIndex = slides.length;
-				}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
 				for (i = 0; i < reqdVars.length; i++) {
 					reqdVars[i].className = reqdVars[i].className.replace(" active", "");
 				}
-				slides[slideIndex-1].style.display = "block";
+				slide.querySelector("img").src = `img/side${slideIndex}.gif`
 				reqdVars[slideIndex-1].className += " active";
+				console.log(slideIndex)
 			}
 
 			const html = document.getElementById("html");
